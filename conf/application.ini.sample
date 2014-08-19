@@ -40,15 +40,15 @@ database.option.port = 3306
 
 application.debug = false
 
-;开发环�?
+;开发环境
 [development : product]
 
 ;database
 database.option.charset = "utf8"
-database.option.database_name =  "jing"
+database.option.database_name =  "dbname"
 database.option.server = "localhost"
-database.option.username = "root"
-database.option.password = "tjw199022"
+database.option.username = "username"
+database.option.password = "password"
 database.option.port = 3306
 
 application.debug = true
