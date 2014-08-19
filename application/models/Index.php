@@ -1,7 +1,7 @@
 <?php
 class IndexModel extends Db_Base{
 	protected $_db;
-	protected $_table = "yunbbs_users"; 
+	protected $_table = "fby_lawyer"; 
 
 	public function showUsers(){
 

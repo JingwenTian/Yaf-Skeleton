@@ -4,8 +4,8 @@ abstract class Ctrl_Base extends Yaf_Controller_Abstract
 
     public function init() {
         //更改视图模板目录
-        $this->setViewPath( APPLICATION_PATH . "/application/views/default/");
-        //echo $this->getViewPath();
+        $this->setViewPath( APPLICATION_PATH . "/application/views/".__TEMPLATE__);//echo $this->getViewPath();
+		
     }
 
 	/**
@@ -15,14 +15,15 @@ abstract class Ctrl_Base extends Yaf_Controller_Abstract
 	 */
 	public function template($file='')
 	{
+		$template_dir = __TEMPLATE__?:'default/';
 		if($file != '')
 		{
-			$file = $file.".phtml";
+			$file = $template_dir.$file.".phtml";
 			$this->getView()->display($file);
 		}
 		else
 		{
-		    $this->getView()->display($this->get("template").".phtml");
+		    $this->getView()->display($template_dir.$this->get("template").".phtml");
 		}
 	}
 	
@@ -76,34 +77,5 @@ abstract class Ctrl_Base extends Yaf_Controller_Abstract
         return $this->getView()->assign($pKey, $pVal);
     }
 
-    /**
-     * 优雅输出print_r()函数所要输出的内容
-     *
-     * 用于程序调试时,完美输出调试数据,功能相当于print_r().当第二参数为true时(默认为:false),功能相当于var_dump()。
-     * 注:本方法一般用于程序调试
-     * @access public
-     * @param array $data         所要输出的数据
-     * @param boolean $option     选项:true或 false
-     * @return array            所要输出的数组内容
-     */
-    public function p($data, $option = false) {
-
-        //当输出print_r()内容时
-        if(!$option){
-            echo '<pre>';
-            print_r($data);
-            echo '</pre>';
-        } else {
-            ob_start();
-            var_dump($data);
-            $output = ob_get_clean();
-
-            $output = str_replace('"', '', $output);
-            $output = preg_replace('/\]\=\>\n(\s+)/m', '] => ', $output);
-
-            echo '<pre>', $output, '</pre>';
-        }
-
-        exit;
-    }
+	
 }
