@@ -1,0 +1,55 @@
+[common]
+application.baseUri="/"
+application.directory = APPLICATION_PATH  "/application"
+application.dispatcher.defaultModule = index
+application.dispatcher.defaultController = index
+application.dispatcher.defaultAction = index
+application.dispatcher.catchException=1
+application.dispatcher.throwException=1
+application.modules=index
+application.view.ext = "phtml"
+
+;smarty
+smarty.config_dir = APPLICATION_PATH "/cache/config"
+smarty.cache_dir = APPLICATION_PATH "/cache/cache"
+smarty.plugins_dir = APPLICATION_PATH "/cache/plugins"
+smarty.template_dir = APPLICATION_PATH "/application/views/"
+smarty.compile_dir = APPLICATION_PATH "/cache/compiled"
+smarty.caching = 0
+smarty.cache_lifetime = 600
+smarty.left_delimiter  = "<{"
+smarty.right_delimiter  = "}>"
+
+
+;memcache
+memcache.params.host = "xxxxxxxxxx"
+memcache.params.port = "11211"
+memcache.params.timeout = 300
+memcache.params.pre = "melon"
+
+;生产环境
+[product : common]
+
+;database
+database.option.charset = "utf8"
+database.option.database_name =  "dbname"
+database.option.server = "localhost"
+database.option.username = "username"
+database.option.password = "password"
+database.option.port = 3306
+
+application.debug = false
+
+;开发环�?
+[development : product]
+
+;database
+database.option.charset = "utf8"
+database.option.database_name =  "jing"
+database.option.server = "localhost"
+database.option.username = "root"
+database.option.password = "tjw199022"
+database.option.port = 3306
+
+application.debug = true
+
