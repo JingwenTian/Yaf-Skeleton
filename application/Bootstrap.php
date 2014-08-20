@@ -35,6 +35,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 		$router = Yaf_Dispatcher::getInstance()->getRouter();
         $route_config = new Yaf_Config_Ini(APPLICATION_PATH . "/conf/route.ini");
         $router->addConfig($route_config->routes);
+	
 	}
 	
 	public function _initView(Yaf_Dispatcher $dispatcher)
@@ -46,6 +47,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 	public function _initDefaultDbAdapter()
 	{
 		$Db = new Db_Medoo($this->_config->database->option->toArray());
+		p($Db);
 		Yaf_Registry::set('Db',$Db);
 	}
 

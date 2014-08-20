@@ -12,9 +12,19 @@ class IndexController extends Ctrl_Base {
 
 	public function indexAction() {
 		
-		$this->getView()->assign('name','jingwentian');
+		$this->assign('name','jingwentian');
 		$this->template('index/index');
 		
+	}
+	
+	public function testsqlAction() {
+		$db = new IndexModel();
+		$data = $db->showUsers();
+		d($data);
+	}
+	
+	public function userAction(){
+		d('hi');
 	}
 
 

@@ -7,10 +7,14 @@
  */
 class SamplePlugin extends Yaf_Plugin_Abstract {
 
-	public function routerStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+	public function routerStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) 
+	{
+	
 	}
 
-	public function routerShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {
+	public function routerShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) 
+	{
+		d('当前生效的路由协议: '.Yaf_Dispatcher::getInstance()->getRouter()->getCurrentRoute());
 	}
 
 	public function dispatchLoopStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response) {

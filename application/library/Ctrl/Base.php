@@ -76,6 +76,7 @@ abstract class Ctrl_Base extends Yaf_Controller_Abstract
 
         return $this->getView()->assign($pKey, $pVal);
     }
+	
 
 	
 }
