@@ -12,11 +12,11 @@ class Db_Medoo
 	protected $database_type = 'mysql';
 
 	// For MySQL, MariaDB, MSSQL, Sybase, PostgreSQL, Oracle
-	protected $server = 'fabangyun365.mysql.rds.aliyuncs.com';
+	protected $server = '';
 
-	protected $username = 'fabangyun';
+	protected $username = '';
 
-	protected $password = 'fabang365yun';
+	protected $password = '';
 
 	// For SQLite
 	protected $database_file = '';
@@ -26,7 +26,7 @@ class Db_Medoo
 
 	protected $charset = 'utf8';
 
-	protected $database_name = 'fabangyun';
+	protected $database_name = '';
 
 	protected $option = array();
 
