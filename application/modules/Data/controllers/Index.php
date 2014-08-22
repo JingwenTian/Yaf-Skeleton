@@ -10,13 +10,13 @@ class IndexController extends Ctrl_Base {
 		  "Current Controller: " . $this->getRequest()->getControllerName().'<br>'.
 		  "Current Action: " . $this->getRequest()->getActionName().'</p>');
 
-
+		parent::auth();
 		  
 	}
 
 	public function indexAction()
 	{
-		
+		d($this->_config);
 		p('hello world!');
 	}
 

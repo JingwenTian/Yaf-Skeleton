@@ -7,6 +7,20 @@ abstract class Ctrl_Base extends Yaf_Controller_Abstract
         $this->setViewPath( APPLICATION_PATH . "/application/views/".__TEMPLATE__);//echo $this->getViewPath();
 		
     }
+	
+	public function auth() {
+	
+		//通过parent::auth()调用
+		$this->_config = Yaf_Registry::get('config');
+		$this->_req = $this->getRequest();
+		
+		// $this->_session = Yaf_Session::getInstance();
+		// $this->_session->start();
+		// if(!$this->_session->has('username')){
+		// 		$this->redirect('/index/');
+		// }
+	
+	}
 
 	/**
 	 * 输出网页模板

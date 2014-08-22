@@ -7,7 +7,7 @@
 class IndexController extends Ctrl_Base {
 	
 	public function init(){
-		
+		parent::auth();
 	}
 
 	public function indexAction() {
@@ -18,14 +18,18 @@ class IndexController extends Ctrl_Base {
 	}
 	
 	public function testsqlAction() {
-		$db = new IndexModel();
-		$data = $db->showUsers();
+		$db = new FbyLawyerModel();
+		$data = $db->getLawyerList();
 		d($data);
 	}
 	
 	public function userAction(){
-		d('hi');
+
+		$this->assign('age',25);
+		$this->template('index/user');
 	}
+	
+	
 
 
 }

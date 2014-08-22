@@ -47,7 +47,6 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 	public function _initDefaultDbAdapter()
 	{
 		$Db = new Db_Medoo($this->_config->database->option->toArray());
-		p($Db);
 		Yaf_Registry::set('Db',$Db);
 	}
 
