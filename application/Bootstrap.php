@@ -46,6 +46,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 
 	public function _initDefaultDbAdapter()
 	{
+		//只支持单库操作,多库操作时在DB_Base类实例化DB类
 		$Db = new Db_Medoo($this->_config->database->option->toArray());
 		Yaf_Registry::set('Db',$Db);
 	}
