@@ -6,7 +6,7 @@ application.dispatcher.defaultController = index
 application.dispatcher.defaultAction = index
 application.dispatcher.catchException=1
 application.dispatcher.throwException=1
-application.modules=index
+application.modules=index,data
 application.view.ext = "phtml"
 
 ;smarty
