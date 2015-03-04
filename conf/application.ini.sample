@@ -44,12 +44,19 @@ application.debug = false
 [development : product]
 
 ;database
-database.option.charset = "utf8"
-database.option.database_name =  "dbname"
-database.option.server = "localhost"
-database.option.username = "username"
-database.option.password = "password"
-database.option.port = 3306
+database.db1.charset = "utf8"
+database.db1.database_name =  "database_name1"
+database.db1.server = "111.111.111.111"
+database.db1.username = "username"
+database.db1.password = "password"
+database.db1.port = 3306
+
+database.db2.charset = "utf8"
+database.db2.database_name =  "database_name2"
+database.db2.server = "111.111.111.111"
+database.db2.username = "username"
+database.db2.password = "password"
+database.db2.port = 3306
 
 application.debug = true
 
