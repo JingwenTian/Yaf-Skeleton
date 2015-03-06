@@ -16,7 +16,7 @@ abstract class Ctrl_Base extends Yaf_Controller_Abstract
 		
 		//路由调试信息
 		if($this->_config->application->debug){
-			echo "<p style='background:pink;position:fixed;bottom:0;padding:3px;z-index:999;'>Current Route: ".Yaf_Dispatcher::getInstance()->getRouter()->getCurrentRoute()."<br>Current Module: ".$this->getModuleName()."<br>Current Controller: " . $this->getRequest()->getControllerName()."<br>Current Action: " . $this->getRequest()->getActionName().'</p>';
+			echo "<p style='background:pink;position:fixed;bottom:0;padding:3px;z-index:999;'>Current Route: ".Yaf_Dispatcher::getInstance()->getRouter()->getCurrentRoute()."<br>Current Module: ".$this->getModuleName()."<br>Current Controller: " . $this->getRequest()->getControllerName()."<br>Current Action: " . $this->getRequest()->getActionName()."<br>Params: ".json_encode($this->getRequest()->getParams())."</p>";
 		}
 		
 		// $this->_session = Yaf_Session::getInstance();
