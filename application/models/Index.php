@@ -2,23 +2,25 @@
 class IndexModel extends Db_Base{
 
 	protected $_db;
-	protected $_table = "fby_lawyer"; 
-	protected $database = "news";//此处为配置文件中的多库标识
+	protected $_table = "blank"; 
+	protected $database = "jing";//此处为配置文件中的多库标识
 	
 	public function __construct() {
 		$this->_config = $this->database;
 		parent::__construct();
 	}
 
-	public function showUsers(){
+	public function showAll() {
 
 		return $this->_db->select("$this->_table","*");
 
-		// $datas = $database->select("account", [
-		// 	"user_name",
-		// 	"email"
-		// ], [
-		// 	"user_id[>]" => 100
-		// ]);
+	}
+	
+	public function showOne($id) {
+		
+		return $this->_db->get("$this->_table", "*", [
+			"id" => $id
+		]);
+		
 	}
 }

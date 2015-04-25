@@ -8,6 +8,7 @@ class IndexController extends Ctrl_Base {
 	
 	public function init(){
 		parent::auth();
+		$this->model = new IndexModel();
 	}
 
 	public function indexAction() {
@@ -17,16 +18,10 @@ class IndexController extends Ctrl_Base {
 		
 	}
 	
-	public function testsqlAction() {
-		$db = new FbyLawyerModel();
-		$data = $db->getLawyerList();
-		d($data);
-	}
-	
-	public function userAction(){
+	public function testAction(){
 
-		$this->assign('age',25);
-		$this->template('index/user');
+		$data = $this->model->showAll();
+		p($data);
 	}
 	
 	
