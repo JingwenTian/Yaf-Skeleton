@@ -3,6 +3,7 @@ class Db_Base
 {
 	protected $_db;
 	protected $_config = '';
+	protected $memcache;
 	
 	//应用于单库操作,在Bootstrap.php初始化DB类
 	//public function __construct() {
@@ -16,6 +17,7 @@ class Db_Base
 		$pConfig = $this->_config;
 		$database = Yaf_Registry::get("config")->database->$pConfig->toArray();
 		$this->_db = new Db_Medoo($database);
+		$this->memcache = new Cache_Memcache();
 		
 	}
 	
