@@ -4,6 +4,10 @@ Yaf-sample
 
 Yaf框架结合PHPUnit的集成测试, 参考了: [yaf-phpunit-test](https://github.com/chenjiebin/yaf-phpunit-test) [介绍](http://www.01happy.com/yaf-phpunit/)
 
+执行测试命令：
+
+    $ phpunit --configuration 项目物理路径/tests/phpunit.xml 项目物理路径/tests/
+
 ---
 
 **wiki**
