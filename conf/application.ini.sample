@@ -22,6 +22,7 @@ smarty.right_delimiter  = "}>"
 
 
 ;memcache
+memcache.open = true
 memcache.params.host = "xxxxxxxxxx"
 memcache.params.port = "11211"
 memcache.params.timeout = 300
