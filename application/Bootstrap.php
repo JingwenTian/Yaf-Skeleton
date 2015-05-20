@@ -19,6 +19,12 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 		define('__JS__',__PUBLIC__.'/js/'.__TEMPLATE__);//当前模板JS文件目录
 		define('__IMG__',__PUBLIC__.'/images/'.__TEMPLATE__);//当前模板图片目录
 		define('__LIBS__',__PUBLIC__.'/libs/');//公共库目录
+		//Memcache常量
+		define('MEMCACHE_HOST', $this->_config->memcache->host);
+	        define('MEMCACHE_PORT', $this->_config->memcache->port);
+	        define('MEMCACHE_TIME', $this->_config->memcache->timeout);
+	        define('MEMCACHE_OPEN', $this->_config->memcache->open);
+	        define('MEMCACHE_PRE', $this->_config->memcache->pre);
 		
 		//关闭自动加载模板
 		Yaf_Dispatcher::getInstance()->autoRender(FALSE);
